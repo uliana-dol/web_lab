@@ -1,0 +1,291 @@
+/* ======================================= */
+/* БАЗОВИЙ СКИН І СКИДАННЯ СТИЛІВ (RESET) */
+/* ======================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #383838;
+    color: white;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/* ======================================= */
+/* HEADER (ШАПКА) */
+/* ======================================= */
+header {
+    background-color: #000000dc;
+    padding: 10px 0;
+    color: white;
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.search-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(110, 108, 108);
+    background-color: #444;
+    color: white;
+}
+
+.search-btn, .clear-btn, #create-btn {
+    padding: 5px 10px;
+    background-color: #4d4d4d;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#create-btn {
+    background-color: #7d7d7d;
+}
+
+
+/* ======================================= */
+/* ОСНОВНИЙ ВМІСТ (MAIN) ТА SIDEBAR */
+/* ======================================= */
+main {
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.sidebar {
+    border-radius: 5px;
+    width: 280px;
+    padding: 20px;
+    background-color: #2e2e2e;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.sidebar label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.sidebar select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #555;
+    color: white;
+}
+
+.count-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #aeaeae;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.total-time {
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid #444;
+}
+
+.total-time p {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.total-time span {
+    color: #d2d2d2;
+}
+
+/* ======================================= */
+/* FILM LIST (СІТКА ФІЛЬМІВ) */
+/* ======================================= */
+.film-list-area {
+    flex-grow: 1;
+}
+
+.film-list {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 30px; 
+    padding: 0;
+    list-style: none;
+}
+
+.film-item {
+    display: flex;
+    flex-direction: column; 
+    height: 100%;
+    align-items: center;
+    background-color: #2e2e2e; 
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.film-item:hover {
+    transform: translateY(-5px);
+}
+
+.film-image {
+    margin-bottom: 16px;
+    width: 200px; 
+    height: 350px; 
+    border-radius: 8px;
+    object-fit: cover; 
+}
+
+.film-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: rgb(255, 255, 255); 
+    min-height: 2.4em;
+    margin-bottom: 5px; 
+}
+
+.film-info {
+    color: #d5d5d5b6;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.btn-container {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.edit-btn, .remove-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    flex-grow: 1;
+    margin: 0 5px;
+}
+
+.edit-btn {
+    background-color: #8c8c8c;
+    color: white;
+    font-weight: bold;
+}
+
+.remove-btn {
+    background-color: #cc0000;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* ======================================= */
+/* FOOTER */
+/* ======================================= */
+
+.footer-style {
+    margin-top: 40px;
+    padding: 15px 0;
+    text-align: center;
+    background-color: #000000dc;
+    border-top: 1px solid #444;
+    color: #bbb;
+}
+
+/* ======================================= */
+/* АДАПТИВНІСТЬ (MEDIA QUERIES) */
+/* ======================================= */
+@media (max-width: 950px) {
+    main {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 550px) {
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    header nav ul {
+        margin-bottom: 10px;
+    }
+
+    .search-menu {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .search-menu input {
+        flex-grow: 1;
+        margin-right: 5px;
+    }
+}
