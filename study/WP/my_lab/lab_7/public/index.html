@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Films library</title>
+    <link rel="stylesheet" href="custum.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Films library</a></li>
+                    <li><a href="#">My Films</a></li>
+                    <li><a href="#" id="create-btn">Add Film</a></li>
+                </ul>
+                <div class="search-menu">
+                    <input type="text" id="search-input" placeholder="Search films...">
+                    <button class="search-btn" onclick="searchFilms()">Search</button>
+                    <button class="clear-btn" onclick="clearSearch()">Clear</button>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <aside class="sidebar">
+                <h2>Manage films</h2>
+                <label for="sort">Sort by:</label>
+                <select id="sort" onchange="sortFilms()">
+                    <option value="time">Lenght</option>
+                    <option value="IMDb-rating">IMDb rating</option>
+                    <option value="number-reviews">Popularity</option>
+                </select>
+                <button class="count-btn" onclick="calculateTotalTime()">Count total time</button>
+                <div class="total-price">
+                    <p>Total Time: <span id="total-time">0h 0m</span></p>
+                </div>
+            </aside>
+            <section class="film-list" id="films">
+            </section>
+        </main>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h2 id="modal-title">Create/Edit Film</h2>
+            <form id="film-form">
+                <label for="film-name">Film Name:</label>
+                <input type="text" id="film-name" name="film-name" required minlength="2"><br><br>
+                
+                <label for="film-time">Time:</label>
+                <input type="number" id="film-hours" name="film-hours" placeholder="Hours" min="0" step="1" required style="width: 100px;">
+                <input type="number" id="film-minutes" name="film-minutes" placeholder="Minutes" min="0" max="59" step="1" required style="width: 100px;">
+                <br><br>
+                
+                <label for="film-IMDb-rating">Film IMDb rating</label>
+                <input type="number" id="film-IMDb-rating" name="film-IMDb-rating" min="1" max="10" step="0.1" required><br><br>
+                
+                <label for="film-number-reviews">Number of Reviews</label>
+                <input type="number" id="film-number-reviews" name="film-number-reviews" min="0" step="1" required><br><br>
+                
+                <label for="film-image">Image URL:</label>
+                <input type="url" id="film-image" name="film-image" placeholder="Enter image URL" required><br>
+                
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="alert-modal" class="modal">
+        <div class="modal-content" id="alert-modal-content">
+            <span class="close" id="close-alert-modal">&times;</span>
+            <p id="alert-message"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
